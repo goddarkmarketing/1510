@@ -115,22 +115,22 @@ export const copy = {
         {
           title: 'MONKEY ISLAND',
           desc: 'แวะถ่ายรูปกับธรรมชาติใกล้ชิด',
-          image: '/images/gallery-1.jpg',
+          image: 'images/gallery-1.jpg',
         },
         {
           title: 'LIMESTONE BAY',
           desc: 'อ่าวน้ำใสและหน้าผาเขียวชอุ่ม',
-          image: '/images/package-3.jpg',
+          image: 'images/package-3.jpg',
         },
         {
           title: 'OPEN SEA RUN',
           desc: 'ช่วงขับโล่ง สนุกและตื่นเต้น',
-          image: '/images/hero.png',
+          image: 'images/hero.png',
         },
         {
           title: 'PHOTO STOP',
           desc: 'จุดพักและเก็บภาพความประทับใจ',
-          image: '/images/gallery-2.jpg',
+          image: 'images/gallery-2.jpg',
         },
       ],
     },
@@ -364,22 +364,22 @@ export const copy = {
         {
           title: 'MONKEY ISLAND',
           desc: 'A fun nature stop for unforgettable photos',
-          image: '/images/gallery-1.jpg',
+          image: 'images/gallery-1.jpg',
         },
         {
           title: 'LIMESTONE BAY',
           desc: 'Turquoise water and lush cliff scenery',
-          image: '/images/package-3.jpg',
+          image: 'images/package-3.jpg',
         },
         {
           title: 'OPEN SEA RUN',
           desc: 'Open-water thrills with wide ocean views',
-          image: '/images/hero.png',
+          image: 'images/hero.png',
         },
         {
           title: 'PHOTO STOP',
           desc: 'Pause, relax, and capture the moment',
-          image: '/images/gallery-2.jpg',
+          image: 'images/gallery-2.jpg',
         },
       ],
     },

@@ -3,6 +3,7 @@ import { Mail, MapPin, MessageCircle, Phone, Share2 } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
 import { contact } from '@/content'
 import { useLocale } from '@/context/locale'
+import { asset } from '@/lib/asset'
 import { navLinks, WA_URL } from '@/lib/site'
 
 export function SiteFooter() {
@@ -14,7 +15,7 @@ export function SiteFooter() {
         <div className="lg:col-span-3">
           <div className="flex items-center gap-3">
             <img
-              src="/images/logo.jpg"
+              src={asset('images/logo.jpg')}
               alt=""
               className="h-12 w-12 rounded-full object-cover"
             />

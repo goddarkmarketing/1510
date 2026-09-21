@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { useLocale } from '@/context/locale'
+import { asset } from '@/lib/asset'
 import { navLinks, WA_URL } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
@@ -37,7 +38,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-2.5">
           <img
-            src="/images/logo.jpg"
+            src={asset('images/logo.jpg')}
             alt="G.I. SEA VISTA"
             className="h-11 w-11 rounded-full object-cover"
           />

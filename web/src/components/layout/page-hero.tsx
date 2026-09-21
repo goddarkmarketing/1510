@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge'
+import { asset } from '@/lib/asset'
 import { cn } from '@/lib/utils'
 
 type PageHeroProps = {
@@ -13,7 +14,7 @@ export function PageHero({
   eyebrow,
   title,
   description,
-  image = '/images/hero.png',
+  image = 'images/hero.png',
   className,
 }: PageHeroProps) {
   return (
@@ -24,7 +25,7 @@ export function PageHero({
       )}
     >
       <img
-        src={image}
+        src={asset(image)}
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
       />

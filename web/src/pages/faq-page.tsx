@@ -30,7 +30,7 @@ export function FaqPage() {
             ? 'รวมคำถามยอดนิยมเกี่ยวกับทัวร์เจ็ตสกี เวลาออก และบริการรับ–ส่ง'
             : 'Answers about tour length, schedule, transfers, and beginner-friendly riding.'
         }
-        image="/images/hero-faq.png"
+        image="images/hero-faq.png"
       />
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8">

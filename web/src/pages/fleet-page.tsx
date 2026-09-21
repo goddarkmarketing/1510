@@ -43,7 +43,7 @@ export function FleetPage() {
         eyebrow={locale === 'th' ? 'FLEET' : 'FLEET'}
         title={title}
         description={desc}
-        image="/images/hero-fleet.png"
+        image="images/hero-fleet.png"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

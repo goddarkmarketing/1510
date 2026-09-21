@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
+import { asset } from '@/lib/asset'
 import { WA_URL } from '@/lib/site'
 
 export function PrivateTourPage() {
@@ -40,24 +41,24 @@ export function PrivateTourPage() {
         eyebrow={t.nav.private}
         title={privateTour.title}
         description={privateTour.desc}
-        image="/images/hero-private.png"
+        image="images/hero-private.png"
       />
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8">
         <div className="space-y-6 lg:col-span-7">
           <img
-            src="/images/gallery-2.jpg"
+            src={asset('images/gallery-2.jpg')}
             alt=""
             className="aspect-[16/10] w-full rounded-2xl object-cover"
           />
           <div className="grid grid-cols-2 gap-3">
             <img
-              src="/images/package-5.jpg"
+              src={asset('images/package-5.jpg')}
               alt=""
               className="aspect-[4/3] w-full rounded-xl object-cover"
             />
             <img
-              src="/images/package-4.jpg"
+              src={asset('images/package-4.jpg')}
               alt=""
               className="aspect-[4/3] w-full rounded-xl object-cover"
             />

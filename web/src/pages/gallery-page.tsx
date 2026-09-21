@@ -24,7 +24,7 @@ export function GalleryPage() {
             ? 'ภาพจริงจากทริปเจ็ตสกีและการผจญภัยทางทะเลกับ G.I. SEA VISTA'
             : 'Real moments from jet ski adventures with G.I. SEA VISTA'
         }
-        image="/images/hero-gallery.png"
+        image="images/hero-gallery.png"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

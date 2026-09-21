@@ -37,7 +37,7 @@ export function ContactPage() {
         eyebrow={t.contactPage.eyebrow}
         title={t.contactPage.title}
         description={t.cta.body}
-        image="/images/hero-contact.png"
+        image="images/hero-contact.png"
       />
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8">

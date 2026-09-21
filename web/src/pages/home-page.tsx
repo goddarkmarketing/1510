@@ -27,6 +27,7 @@ import {
 } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
+import { asset } from '@/lib/asset'
 import { tourImages, WA_URL } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
@@ -48,7 +49,7 @@ export function HomePage() {
       <section className="relative isolate">
         <div className="relative min-h-[min(640px,calc(100svh-4rem))] overflow-hidden sm:min-h-[calc(100svh-72px)]">
           <img
-            src="/images/hero.png"
+            src={asset('images/hero.png')}
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
           />
@@ -213,7 +214,7 @@ export function HomePage() {
 
       <section className="relative overflow-hidden">
         <img
-          src="/images/banner.png"
+          src={asset('images/banner.png')}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -367,7 +368,7 @@ export function HomePage() {
 
       <section className="relative overflow-hidden">
         <img
-          src="/images/cta-banner.png"
+          src={asset('images/cta-banner.png')}
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
         />
