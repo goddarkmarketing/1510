@@ -9,10 +9,12 @@ import { HomePage } from '@/pages/home-page'
 import { PrivateTourPage } from '@/pages/private-tour-page'
 import { ToursPage } from '@/pages/tours-page'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 export default function App() {
   return (
     <LocaleProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename === '/' ? undefined : basename}>
         <Routes>
           <Route element={<SiteLayout />}>
             <Route index element={<HomePage />} />
