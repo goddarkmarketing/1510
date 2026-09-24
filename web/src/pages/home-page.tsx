@@ -14,6 +14,7 @@ import {
   Users,
 } from 'lucide-react'
 import { BookingBar } from '@/components/booking-bar'
+import { TourAdventure } from '@/components/tour-adventure'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -29,7 +30,6 @@ import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
 import { asset } from '@/lib/asset'
 import { tourImages, WA_URL } from '@/lib/site'
-import { cn } from '@/lib/utils'
 
 const whyIcons = [Ship, UserCheck, ShieldCheck, Bus] as const
 
@@ -51,7 +51,7 @@ export function HomePage() {
           <img
             src={asset('images/hero.png')}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+            className="absolute inset-0 h-full w-full object-cover object-[35%_center]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-deep/80 via-blue-deep/45 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-blue-deep/70 via-blue-deep/25 to-blue-deep/30" />
@@ -101,7 +101,9 @@ export function HomePage() {
         <BookingBar />
       </section>
 
-      <section className="bg-white pt-20 pb-8 sm:pt-24">
+      <TourAdventure className="pb-8 sm:pb-10" />
+
+      <section className="bg-sky/40 pt-16 pb-8 sm:pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <BlurFade direction="up" className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
@@ -111,11 +113,11 @@ export function HomePage() {
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">{t.tours.sub}</p>
           </BlurFade>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {t.tours.items.map((item, i) => (
-              <BlurFade key={item.title} delay={0.08 * i} direction="up">
+              <BlurFade key={item.title} delay={0.08 * i} direction="up" className="h-full">
                 <Card className="h-full pt-0">
-                  <div className="relative">
+                  <div className="relative shrink-0">
                     <img
                       src={tourImages[i]}
                       alt=""
@@ -127,11 +129,13 @@ export function HomePage() {
                       </Badge>
                     ) : null}
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-lg font-extrabold">{item.title}</CardTitle>
+                  <CardHeader className="shrink-0">
+                    <CardTitle className="text-base font-extrabold leading-snug xl:text-[0.95rem]">
+                      {item.title}
+                    </CardTitle>
                     <CardDescription>{item.desc}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="flex flex-1 flex-col space-y-4">
                     <div className="flex flex-wrap gap-3 text-xs font-semibold text-primary">
                       <span className="inline-flex items-center gap-1.5">
                         <Clock size={14} /> {item.time}
@@ -155,20 +159,17 @@ export function HomePage() {
                       ))}
                     </ul>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter className="mt-auto">
                     <Button
                       render={
-                        <Link
-                          to={i === 2 ? '/private-tour' : '/tours'}
+                        <a
+                          href={WA_URL}
+                          target="_blank"
+                          rel="noreferrer"
                           className="w-full"
                         />
                       }
-                      variant={item.popular ? 'default' : 'outline'}
-                      className={cn(
-                        'w-full',
-                        item.popular &&
-                          'bg-accent text-accent-foreground hover:bg-orange-hot',
-                      )}
+                      className="w-full bg-accent text-accent-foreground hover:bg-orange-hot"
                     >
                       {item.cta}
                       <ArrowRight size={14} />

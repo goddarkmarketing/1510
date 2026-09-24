@@ -27,6 +27,7 @@ export const galleryImages = [
 export const tourImages = [
   asset('images/tour-card-1.png'),
   asset('images/tour-card-2.png'),
+  asset('images/package-3.jpg'),
   asset('images/tour-card-3.png'),
 ]
 

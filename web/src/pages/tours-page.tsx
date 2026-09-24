@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, Clock, Tag, Users } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
+import { TourAdventure } from '@/components/tour-adventure'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,7 +15,6 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
 import { tourImages, WA_URL } from '@/lib/site'
-import { cn } from '@/lib/utils'
 
 export function ToursPage() {
   const { t, locale } = useLocale()
@@ -28,11 +28,13 @@ export function ToursPage() {
         image="images/hero-tours.png"
       />
 
+      <TourAdventure className="pt-12 sm:pt-14" />
+
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {t.tours.items.map((item, i) => (
             <Card key={item.title} className="h-full pt-0">
-              <div className="relative">
+              <div className="relative shrink-0">
                 <img
                   src={tourImages[i]}
                   alt=""
@@ -44,11 +46,13 @@ export function ToursPage() {
                   </Badge>
                 ) : null}
               </div>
-              <CardHeader>
-                <CardTitle className="text-lg font-extrabold">{item.title}</CardTitle>
+              <CardHeader className="shrink-0">
+                <CardTitle className="text-base font-extrabold leading-snug xl:text-[0.95rem]">
+                  {item.title}
+                </CardTitle>
                 <CardDescription>{item.desc}</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-1 flex-col space-y-4">
                 <div className="flex flex-wrap gap-3 text-xs font-semibold text-primary">
                   <span className="inline-flex items-center gap-1.5">
                     <Clock size={14} /> {item.time}
@@ -73,16 +77,10 @@ export function ToursPage() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="flex flex-col gap-2 sm:flex-row">
+              <CardFooter className="mt-auto">
                 <Button
                   render={<a href={WA_URL} target="_blank" rel="noreferrer" className="w-full" />}
-                  className={cn(
-                    'w-full',
-                    item.popular
-                      ? 'bg-accent text-accent-foreground hover:bg-orange-hot'
-                      : '',
-                  )}
-                  variant={item.popular ? 'default' : 'outline'}
+                  className="w-full bg-accent text-accent-foreground hover:bg-orange-hot"
                 >
                   {item.cta}
                   <ArrowRight size={14} />

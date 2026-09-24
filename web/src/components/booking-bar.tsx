@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { format } from 'date-fns'
-import { ArrowRight, CalendarIcon } from 'lucide-react'
+import { ArrowRight, CalendarIcon, Ship, Users } from 'lucide-react'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
@@ -22,16 +22,40 @@ import { cn } from '@/lib/utils'
 const controlClass =
   '!h-12 w-full rounded-xl border border-border bg-background px-3 text-sm font-semibold shadow-none'
 
+const JET_COUNTS = [1, 2, 3, 4, 5, 6, 7, 8] as const
+
+function jetSkiLabel(count: number, locale: string) {
+  const guests = count * 2
+  return locale === 'th'
+    ? `${count} JetSki · ${guests} ท่าน`
+    : `${count} JetSki · ${guests} Guests`
+}
+
+function JetSkiOption({ count, locale }: { count: number; locale: string }) {
+  const guests = count * 2
+  return (
+    <span className="flex items-center gap-2">
+      <Ship className="size-4 shrink-0 opacity-80" strokeWidth={2} />
+      <span className="font-semibold">{count} JetSki</span>
+      <span className="text-current/40">·</span>
+      <Users className="size-3.5 shrink-0 opacity-70" strokeWidth={2.2} />
+      <span className="font-semibold">
+        {guests} {locale === 'th' ? 'ท่าน' : 'Guests'}
+      </span>
+    </span>
+  )
+}
+
 export function BookingBar() {
   const { t, locale } = useLocale()
   const [tour, setTour] = useState(t.hero.tourOptions[0])
-  const [guests, setGuests] = useState(t.hero.guestOptions[0])
+  const [jetSki, setJetSki] = useState('1')
   const [date, setDate] = useState<Date>()
   const [calendarOpen, setCalendarOpen] = useState(false)
 
   useEffect(() => {
     setTour(t.hero.tourOptions[0])
-    setGuests(t.hero.guestOptions[0])
+    setJetSki('1')
   }, [t])
 
   const today = useMemo(() => {
@@ -44,7 +68,7 @@ export function BookingBar() {
     e.preventDefault()
     if (!date) return
     const msg = encodeURIComponent(
-      `Hello G.I. SEA VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nGuests: ${guests}`,
+      `Hello G.I. SEA VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nJetSki: ${jetSkiLabel(Number(jetSki), locale)}`,
     )
     window.open(`${WA_URL}?text=${msg}`, '_blank')
   }
@@ -128,18 +152,24 @@ export function BookingBar() {
                     {t.hero.bookGuests}
                   </FieldLabel>
                   <Select
-                    value={guests}
-                    onValueChange={(v) => v && setGuests(v)}
+                    value={jetSki}
+                    onValueChange={(v) => v && setJetSki(v)}
                   >
                     <SelectTrigger
                       className={cn(controlClass, 'data-[size=default]:!h-12')}
                     >
-                      <SelectValue />
+                      <SelectValue>
+                        <JetSkiOption count={Number(jetSki)} locale={locale} />
+                      </SelectValue>
                     </SelectTrigger>
-                    <SelectContent>
-                      {t.hero.guestOptions.map((opt) => (
-                        <SelectItem key={opt} value={opt} className="py-2.5">
-                          {opt}
+                    <SelectContent className="min-w-[var(--anchor-width)]">
+                      {JET_COUNTS.map((count) => (
+                        <SelectItem
+                          key={count}
+                          value={String(count)}
+                          className="py-2.5"
+                        >
+                          <JetSkiOption count={count} locale={locale} />
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -164,8 +194,8 @@ export function BookingBar() {
               <Separator className="my-3 sm:hidden" />
               <p className="text-center text-[11px] text-muted-foreground sm:mt-3 sm:text-left lg:mt-3">
                 {locale === 'th'
-                  ? 'เลือกทัวร์ วันที่ และจำนวนผู้ร่วม แล้วกดเช็กที่ว่างผ่าน WhatsApp'
-                  : 'Pick a tour, date, and guests — then check availability on WhatsApp'}
+                  ? 'เลือกทัวร์ วันที่ และจำนวนเจ็ตสกี แล้วกดเช็กที่ว่างผ่าน WhatsApp'
+                  : 'Pick a tour, date, and jet ski count — then check availability on WhatsApp'}
               </p>
             </form>
           </CardContent>
