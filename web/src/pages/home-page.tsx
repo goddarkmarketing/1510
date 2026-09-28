@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { BookingBar } from '@/components/booking-bar'
 import { TourAdventure } from '@/components/tour-adventure'
+import { TourOfferCard } from '@/components/tour-offer-card'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -51,50 +52,27 @@ export function HomePage() {
           <img
             src={asset('images/hero.png')}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-[35%_center]"
+            className="absolute inset-0 h-full w-full object-cover object-[32%_center] lg:object-[18%_30%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-deep/80 via-blue-deep/45 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-deep/70 via-blue-deep/25 to-blue-deep/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
 
-          <div className="relative mx-auto flex min-h-[min(640px,calc(100svh-4rem))] max-w-7xl flex-col justify-end px-4 pb-28 pt-8 sm:min-h-[calc(100svh-72px)] sm:justify-center sm:px-6 sm:pb-40 sm:pt-10 lg:px-8">
-            <div className="grid items-end gap-8 lg:grid-cols-12">
-              <div className="lg:col-span-7">
-                <BlurFade direction="up" offset={18} inView={false}>
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-white/85 uppercase sm:text-xs sm:tracking-[0.28em]">
-                    {t.hero.eyebrow}
-                  </p>
-                  <h1 className="mt-3 max-w-[16ch] whitespace-pre-line text-[1.75rem] leading-[1.1] font-extrabold text-white italic sm:mt-4 sm:max-w-none sm:text-5xl sm:leading-[1.05] lg:text-6xl">
-                    {t.hero.title}
-                  </h1>
-                  <p className="mt-3 max-w-md text-[13px] leading-relaxed text-white/85 sm:mt-5 sm:max-w-lg sm:text-base">
-                    {t.hero.body}
-                  </p>
-                  <div className="mt-5 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
-                    {t.hero.trust.map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-2 text-[12px] font-semibold text-white sm:text-sm"
-                      >
-                        <CheckCircle2
-                          size={15}
-                          className="shrink-0 text-orange-hot"
-                        />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </BlurFade>
-              </div>
-              <div className="hidden lg:col-span-5 lg:flex lg:justify-end">
-                <p className="font-script max-w-[220px] text-right text-4xl leading-tight text-white/90">
-                  {t.hero.script.split('\n').map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            </div>
+          <div className="relative mx-auto flex min-h-[min(640px,calc(100svh-4rem))] max-w-3xl flex-col items-center justify-center px-4 pb-28 pt-8 text-center sm:min-h-[calc(100svh-72px)] sm:px-6 sm:pb-40 sm:pt-10">
+            <BlurFade direction="up" offset={18} inView={false} className="flex flex-col items-center">
+              <p className="text-xs font-bold tracking-[0.28em] text-white uppercase sm:text-sm">
+                {t.hero.eyebrow}
+              </p>
+              <h1 className="mt-3 text-[1.85rem] leading-[1.15] font-extrabold tracking-wide text-orange uppercase sm:text-5xl lg:text-6xl">
+                {t.hero.title}
+              </h1>
+              <Button
+                render={
+                  <a href={WA_URL} target="_blank" rel="noreferrer" />
+                }
+                className="mt-6 h-12 rounded-md bg-orange px-8 text-sm font-bold tracking-[0.16em] text-white uppercase hover:bg-orange-hot"
+              >
+                {t.hero.booking}
+              </Button>
+            </BlurFade>
           </div>
         </div>
 
@@ -113,9 +91,25 @@ export function HomePage() {
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">{t.tours.sub}</p>
           </BlurFade>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {t.tours.items.map((item, i) => (
               <BlurFade key={item.title} delay={0.08 * i} direction="up" className="h-full">
+                {'period' in item && item.period ? (
+                  <TourOfferCard
+                    image={tourImages[i]}
+                    item={{
+                      name: item.name,
+                      session: item.session,
+                      desc: item.desc,
+                      capacity: item.capacity,
+                      capacityNote: item.capacityNote,
+                      price: item.price,
+                      features: item.features,
+                      cta: item.cta,
+                      period: item.period,
+                    }}
+                  />
+                ) : (
                 <Card className="h-full pt-0">
                   <div className="relative shrink-0">
                     <img
@@ -176,6 +170,7 @@ export function HomePage() {
                     </Button>
                   </CardFooter>
                 </Card>
+                )}
               </BlurFade>
             ))}
           </div>

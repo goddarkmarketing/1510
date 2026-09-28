@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, Clock, Tag, Users } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
 import { TourAdventure } from '@/components/tour-adventure'
+import { TourOfferCard } from '@/components/tour-offer-card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -31,8 +32,25 @@ export function ToursPage() {
       <TourAdventure className="pt-12 sm:pt-14" />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {t.tours.items.map((item, i) => (
+        <div className="grid gap-6 sm:grid-cols-2">
+          {t.tours.items.map((item, i) =>
+            'period' in item && item.period ? (
+              <TourOfferCard
+                key={item.title}
+                image={tourImages[i]}
+                item={{
+                  name: item.name,
+                  session: item.session,
+                  desc: item.desc,
+                  capacity: item.capacity,
+                  capacityNote: item.capacityNote,
+                  price: item.price,
+                  features: item.features,
+                  cta: item.cta,
+                  period: item.period,
+                }}
+              />
+            ) : (
             <Card key={item.title} className="h-full pt-0">
               <div className="relative shrink-0">
                 <img
@@ -87,7 +105,8 @@ export function ToursPage() {
                 </Button>
               </CardFooter>
             </Card>
-          ))}
+            ),
+          )}
         </div>
 
         <Card className="mt-10 border-primary/20 bg-secondary/40">
