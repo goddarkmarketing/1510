@@ -1,15 +1,12 @@
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight,
   Bus,
   CheckCircle2,
-  Clock,
   Crown,
   Play,
   ShieldCheck,
   Ship,
   Star,
-  Tag,
   UserCheck,
   Users,
 } from 'lucide-react'
@@ -17,7 +14,6 @@ import { BookingBar } from '@/components/booking-bar'
 import { TourAdventure } from '@/components/tour-adventure'
 import { TourOfferCard } from '@/components/tour-offer-card'
 import { BlurFade } from '@/components/ui/blur-fade'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -94,83 +90,20 @@ export function HomePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {t.tours.items.map((item, i) => (
               <BlurFade key={item.title} delay={0.08 * i} direction="up" className="h-full">
-                {'period' in item && item.period ? (
-                  <TourOfferCard
-                    image={tourImages[i]}
-                    item={{
-                      name: item.name,
-                      session: item.session,
-                      desc: item.desc,
-                      capacity: item.capacity,
-                      capacityNote: item.capacityNote,
-                      price: item.price,
-                      features: item.features,
-                      cta: item.cta,
-                      period: item.period,
-                    }}
-                  />
-                ) : (
-                <Card className="h-full pt-0">
-                  <div className="relative shrink-0">
-                    <img
-                      src={tourImages[i]}
-                      alt=""
-                      className="aspect-[16/10] w-full object-cover"
-                    />
-                    {item.popular ? (
-                      <Badge className="absolute top-3 right-3 bg-accent text-accent-foreground">
-                        MOST POPULAR
-                      </Badge>
-                    ) : null}
-                  </div>
-                  <CardHeader className="shrink-0">
-                    <CardTitle className="text-base font-extrabold leading-snug xl:text-[0.95rem]">
-                      {item.title}
-                    </CardTitle>
-                    <CardDescription>{item.desc}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex flex-1 flex-col space-y-4">
-                    <div className="flex flex-wrap gap-3 text-xs font-semibold text-primary">
-                      <span className="inline-flex items-center gap-1.5">
-                        <Clock size={14} /> {item.time}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Users size={14} /> {item.guests}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Tag size={14} /> {item.price}
-                      </span>
-                    </div>
-                    <ul className="space-y-2.5">
-                      {item.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2 text-sm">
-                          <CheckCircle2
-                            size={16}
-                            className="mt-0.5 shrink-0 text-primary"
-                          />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="mt-auto">
-                    <Button
-                      render={
-                        <a
-                          href={WA_URL}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-full"
-                        />
-                      }
-                      className="w-full bg-accent text-accent-foreground hover:bg-orange-hot"
-                    >
-                      {item.cta}
-                      <ArrowRight size={14} />
-                    </Button>
-                  </CardFooter>
-                </Card>
-                )}
+                <TourOfferCard
+                  image={tourImages[i]}
+                  item={{
+                    name: item.name,
+                    session: item.session,
+                    desc: item.desc,
+                    capacity: item.capacity,
+                    capacityNote: item.capacityNote,
+                    price: item.price,
+                    features: item.features,
+                    cta: item.cta,
+                    period: item.period,
+                  }}
+                />
               </BlurFade>
             ))}
           </div>

@@ -16,7 +16,6 @@ import { WA_URL } from '@/lib/site'
 
 export function PrivateTourPage() {
   const { t, locale } = useLocale()
-  const privateTour = t.tours.items[2]
 
   const highlights =
     locale === 'th'
@@ -39,8 +38,8 @@ export function PrivateTourPage() {
     <>
       <PageHero
         eyebrow={t.nav.private}
-        title={privateTour.title}
-        description={privateTour.desc}
+        title={t.pricing.private.title}
+        description={t.pricing.sub}
         image="images/hero-private.png"
       />
 
@@ -107,7 +106,7 @@ export function PrivateTourPage() {
               size="lg"
             >
               <MessageCircle size={16} />
-              {privateTour.cta}
+              {t.pricing.private.cta}
             </Button>
           </CardFooter>
         </Card>
