@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import {
   Bus,
   CheckCircle2,
-  Crown,
   Play,
   ShieldCheck,
   Ship,
@@ -190,7 +189,7 @@ export function HomePage() {
               <X size={18} />
             </button>
             <video
-              src={asset('videos/tour.mp4')}
+              src={asset('videos/tour-web.mp4')}
               controls
               autoPlay
               playsInline
@@ -212,7 +211,7 @@ export function HomePage() {
             <p className="mt-4 text-sm text-muted-foreground">{t.pricing.sub}</p>
             <p className="mt-4 text-sm font-semibold text-accent">{t.pricing.note}</p>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-8">
+          <div className="grid gap-5 lg:col-span-8 lg:max-w-md">
             <Card className="border-0 bg-primary text-primary-foreground ring-0">
               <CardHeader>
                 <Users size={28} />
@@ -240,36 +239,6 @@ export function HomePage() {
                   className="w-full bg-white text-primary hover:bg-white/90"
                 >
                   {t.pricing.group.cta}
-                </Button>
-              </CardFooter>
-            </Card>
-            <Card className="border-0 bg-accent text-accent-foreground ring-0">
-              <CardHeader>
-                <Crown size={28} />
-                <CardTitle className="text-lg font-extrabold text-white">
-                  {t.pricing.private.title}
-                </CardTitle>
-                <CardDescription className="text-white/80">
-                  {t.pricing.private.from}
-                </CardDescription>
-                <p className="text-4xl font-extrabold">{t.pricing.private.price}</p>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2.5">
-                  {t.pricing.private.features.map((f) => (
-                    <li key={f} className="flex gap-2 text-sm text-white/95">
-                      <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="border-white/10 bg-transparent">
-                <Button
-                  render={<Link to="/private-tour" className="w-full" />}
-                  className="w-full bg-white text-accent hover:bg-white/90"
-                >
-                  {t.pricing.private.cta}
                 </Button>
               </CardFooter>
             </Card>

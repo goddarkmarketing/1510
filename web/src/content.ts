@@ -5,7 +5,6 @@ export const copy = {
     nav: {
       home: 'หน้าแรก',
       tours: 'ทัวร์',
-      private: 'ทัวร์ส่วนตัว',
       fleet: 'เรือเจ็ตสกี',
       gallery: 'แกลเลอรี',
       faq: 'คำถามที่พบบ่อย',
@@ -158,7 +157,7 @@ export const copy = {
     pricing: {
       eyebrow: 'TOUR PRICING',
       title: 'ประสบการณ์ดีสำหรับทุกนักเดินทาง',
-      sub: 'เลือกรอบเช้าหรือบ่าย หรือปรึกษาทัวร์ส่วนตัวได้ตามสไตล์ของคุณ',
+      sub: 'เลือกรอบเช้าหรือบ่ายได้ตามสไตล์ของคุณ',
       group: {
         title: 'ทัวร์มาตรฐาน',
         from: 'เริ่มต้น',
@@ -172,20 +171,6 @@ export const copy = {
           'อาหารระหว่างทริป',
         ],
         cta: 'ดูทัวร์มาตรฐาน',
-      },
-      private: {
-        title: 'ทัวร์ส่วนตัว',
-        from: 'เริ่มต้น',
-        price: 'สอบถามราคา',
-        unit: 'จัดตามคำขอ',
-        features: [
-          'เวลาออกที่ยืดหยุ่นกว่า',
-          'ประสบการณ์ส่วนตัวมากขึ้น',
-          'เหมาะกับคู่รักและกลุ่มเล็ก',
-          'ไกด์ดูแลใกล้ชิด',
-          'รถรับ–ส่งฟรี',
-        ],
-        cta: 'วางแผนทัวร์ส่วนตัว',
       },
       note: 'ราคาปกติ ฿8,900 — จองตอนนี้เพียง ฿7,500 / คัน',
     },
@@ -275,7 +260,6 @@ export const copy = {
     nav: {
       home: 'Home',
       tours: 'Tours',
-      private: 'Private Tour',
       fleet: 'Fleet',
       gallery: 'Gallery',
       faq: 'FAQ',
@@ -428,7 +412,7 @@ export const copy = {
     pricing: {
       eyebrow: 'TOUR PRICING',
       title: 'GREAT EXPERIENCES FOR EVERY TRAVELER',
-      sub: 'Choose morning or afternoon — or ask us about a private session.',
+      sub: 'Choose a morning or afternoon session.',
       group: {
         title: 'STANDARD TOURS',
         from: 'From',
@@ -442,20 +426,6 @@ export const copy = {
           'Meal during the tour',
         ],
         cta: 'VIEW STANDARD TOURS',
-      },
-      private: {
-        title: 'PRIVATE TOURS',
-        from: 'From',
-        price: 'Ask Us',
-        unit: 'custom arrangement',
-        features: [
-          'More flexible timing',
-          'More private experience',
-          'Ideal for couples & small groups',
-          'Closer guide care',
-          'Free hotel transfer',
-        ],
-        cta: 'PLAN PRIVATE TOUR',
       },
       note: 'Regular price ฿8,900 — book now for only ฿7,500 / jet ski',
     },

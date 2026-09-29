@@ -5,7 +5,6 @@ export const WA_URL = 'https://wa.me/66902691898'
 export const navLinks = [
   { to: '/', key: 'home' as const },
   { to: '/tours', key: 'tours' as const },
-  { to: '/private-tour', key: 'private' as const },
   { to: '/fleet', key: 'fleet' as const },
   { to: '/gallery', key: 'gallery' as const },
   { to: '/faq', key: 'faq' as const },
@@ -14,13 +13,9 @@ export const navLinks = [
 
 export const galleryImages = [
   asset('images/gallery-1.jpg'),
-  asset('images/package-3.jpg'),
   asset('images/hero.png'),
   asset('images/gallery-2.jpg'),
-  asset('images/package-1.jpg'),
-  asset('images/package-5.jpg'),
   asset('images/package-2.jpg'),
-  asset('images/banner.png'),
   asset('images/package-4.jpg'),
 ]
 

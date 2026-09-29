@@ -1,14 +1,10 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
 import { TourAdventure } from '@/components/tour-adventure'
 import { TourOfferCard } from '@/components/tour-offer-card'
-import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
@@ -73,12 +69,6 @@ export function ToursPage() {
               </p>
             </div>
           </CardContent>
-          <CardFooter>
-            <Button render={<Link to="/private-tour" />} variant="outline">
-              {t.nav.private}
-              <ArrowRight size={14} />
-            </Button>
-          </CardFooter>
         </Card>
       </section>
     </>

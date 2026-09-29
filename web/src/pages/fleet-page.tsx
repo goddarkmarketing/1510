@@ -95,8 +95,8 @@ export function FleetPage() {
             </CardTitle>
             <CardDescription className="text-white/75">
               {locale === 'th'
-                ? 'จองทัวร์มาตรฐานหรือทัวร์ส่วนตัวได้ทาง WhatsApp'
-                : 'Book a standard or private tour via WhatsApp.'}
+                ? 'จองทัวร์ได้ทาง WhatsApp'
+                : 'Book a tour via WhatsApp.'}
             </CardDescription>
           </CardHeader>
           <CardContent>
