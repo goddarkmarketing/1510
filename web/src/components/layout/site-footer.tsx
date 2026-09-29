@@ -20,7 +20,7 @@ export function SiteFooter() {
               className="h-12 w-12 rounded-full object-cover"
             />
             <div>
-              <p className="font-extrabold">G.I. SEA VISTA</p>
+              <p className="font-extrabold">G.I. SEA. VISTA</p>
               <p className="text-xs text-white/60">{t.footer.tagline}</p>
             </div>
           </div>

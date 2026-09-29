@@ -48,12 +48,16 @@ export function FleetPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-3">
-          {fleetImages.map((item) => (
+          {fleetImages.map((item, i) => (
             <Card key={item.title} className="overflow-hidden pt-0">
               <img
                 src={item.src}
                 alt=""
-                className="aspect-[4/3] w-full object-cover"
+                className={
+                  i === 0
+                    ? 'aspect-[1024/796] w-full bg-[#e8f7ff] object-contain'
+                    : 'aspect-[4/3] w-full object-cover'
+                }
               />
               <CardHeader>
                 <div className="flex items-center justify-between gap-2">

@@ -21,8 +21,8 @@ export function GalleryPage() {
         title={t.gallery.title}
         description={
           locale === 'th'
-            ? 'ภาพจริงจากทริปเจ็ตสกีและการผจญภัยทางทะเลกับ G.I. SEA VISTA'
-            : 'Real moments from jet ski adventures with G.I. SEA VISTA'
+            ? 'ภาพจริงจากทริปเจ็ตสกีและการผจญภัยทางทะเลกับ G.I. SEA. VISTA'
+            : 'Real moments from jet ski adventures with G.I. SEA. VISTA'
         }
         image="images/hero-gallery.png"
       />

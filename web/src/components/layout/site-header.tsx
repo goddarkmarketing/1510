@@ -39,12 +39,12 @@ export function SiteHeader() {
         <Link to="/" className="flex min-w-0 items-center gap-2.5">
           <img
             src={asset('images/logo.jpg')}
-            alt="G.I. SEA VISTA"
+            alt="GI JET SKI TOURS"
             className="h-11 w-11 rounded-full object-cover"
           />
           <div className="min-w-0 leading-tight">
-            <p className="truncate text-sm font-extrabold tracking-wide text-primary sm:text-base">
-              G.I. SEA VISTA
+            <p className="text-sm font-extrabold tracking-wide text-primary sm:text-base">
+              GI JET SKI TOURS
             </p>
             <p className="hidden text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase sm:block">
               Ride · Explore · Discover
@@ -111,7 +111,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[88%] max-w-sm p-0">
               <SheetHeader className="border-b border-border p-4 text-left">
-                <SheetTitle>G.I. SEA VISTA</SheetTitle>
+                <SheetTitle>GI JET SKI TOURS</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 p-3">
                 {navLinks.map((item) => (

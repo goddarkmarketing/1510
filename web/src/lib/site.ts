@@ -31,12 +31,12 @@ export const tourImages = [
 
 export const fleetImages = [
   {
-    src: asset('images/package-3.jpg'),
+    src: asset('images/fleet-gtx-pro.png'),
     title: 'Sea-Doo GTX PRO 130',
     specs: ['130 HP', 'Comfort seat', 'Up to 2 guests'],
   },
   {
-    src: asset('images/package-1.jpg'),
+    src: asset('images/fleet-tour-ready.png'),
     title: 'Tour Ready Fleet',
     specs: ['Life jackets', 'Guided convoy', 'Photo stops'],
   },

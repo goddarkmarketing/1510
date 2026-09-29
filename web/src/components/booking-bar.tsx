@@ -68,7 +68,7 @@ export function BookingBar() {
     e.preventDefault()
     if (!date) return
     const msg = encodeURIComponent(
-      `Hello G.I. SEA VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nJetSki: ${jetSkiLabel(Number(jetSki), locale)}`,
+      `Hello G.I. SEA. VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nJetSki: ${jetSkiLabel(Number(jetSki), locale)}`,
     )
     window.open(`${WA_URL}?text=${msg}`, '_blank')
   }

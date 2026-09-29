@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Bus,
@@ -9,6 +10,7 @@ import {
   Star,
   UserCheck,
   Users,
+  X,
 } from 'lucide-react'
 import { BookingBar } from '@/components/booking-bar'
 import { TourAdventure } from '@/components/tour-adventure'
@@ -40,6 +42,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function HomePage() {
   const { t } = useLocale()
+  const [videoOpen, setVideoOpen] = useState(false)
 
   return (
     <>
@@ -54,12 +57,12 @@ export function HomePage() {
 
           <div className="relative mx-auto flex min-h-[min(640px,calc(100svh-4rem))] max-w-3xl flex-col items-center justify-center px-4 pb-28 pt-8 text-center sm:min-h-[calc(100svh-72px)] sm:px-6 sm:pb-40 sm:pt-10">
             <BlurFade direction="up" offset={18} inView={false} className="flex flex-col items-center">
-              <p className="text-xs font-bold tracking-[0.28em] text-white uppercase sm:text-sm">
-                {t.hero.eyebrow}
-              </p>
-              <h1 className="mt-3 text-[1.85rem] leading-[1.15] font-extrabold tracking-wide text-orange uppercase sm:text-5xl lg:text-6xl">
+              <h1 className="text-[1.85rem] leading-[1.15] font-extrabold tracking-wide text-orange uppercase sm:text-5xl lg:text-6xl">
                 {t.hero.title}
               </h1>
+              <p className="mt-3 text-sm font-bold tracking-[0.22em] text-white uppercase sm:text-lg">
+                {t.hero.place}
+              </p>
               <Button
                 render={
                   <a href={WA_URL} target="_blank" rel="noreferrer" />
@@ -156,9 +159,10 @@ export function HomePage() {
             <p className="mt-3 max-w-lg text-sm text-white/80">{t.video.body}</p>
           </div>
           <Button
-            render={<Link to="/fleet" />}
+            type="button"
             variant="outline"
             className="border-white/80 bg-transparent text-white hover:bg-white hover:text-primary"
+            onClick={() => setVideoOpen(true)}
           >
             <span className="inline-flex size-8 items-center justify-center rounded-full bg-accent text-white">
               <Play size={14} fill="currentColor" />
@@ -167,6 +171,34 @@ export function HomePage() {
           </Button>
         </div>
       </section>
+
+      {videoOpen ? (
+        <div
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close video"
+              className="absolute -top-11 right-0 inline-flex size-9 items-center justify-center rounded-full bg-white text-blue-deep"
+              onClick={() => setVideoOpen(false)}
+            >
+              <X size={18} />
+            </button>
+            <video
+              src={asset('videos/tour.mp4')}
+              controls
+              autoPlay
+              playsInline
+              className="max-h-[80vh] w-full rounded-xl bg-black"
+            />
+          </div>
+        </div>
+      ) : null}
 
       <section className="bg-[#f7f9fc] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">

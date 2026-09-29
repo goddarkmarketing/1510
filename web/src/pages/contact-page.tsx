@@ -15,6 +15,7 @@ import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
 import { contact } from '@/content'
 import { useLocale } from '@/context/locale'
+import { asset } from '@/lib/asset'
 import { WA_URL } from '@/lib/site'
 
 export function ContactPage() {
@@ -26,7 +27,7 @@ export function ContactPage() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     const text = encodeURIComponent(
-      `Hello G.I. SEA VISTA!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      `Hello G.I. SEA. VISTA!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
     )
     window.open(`${WA_URL}?text=${text}`, '_blank')
   }
@@ -39,6 +40,14 @@ export function ContactPage() {
         description={t.cta.body}
         image="images/hero-contact.png"
       />
+
+      <section className="mx-auto max-w-3xl px-4 pt-10 sm:px-6 sm:pt-14">
+        <img
+          src={asset('images/contact-qr.png')}
+          alt="WhatsApp and LINE QR codes"
+          className="mx-auto h-auto w-full"
+        />
+      </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8">
         <div className="space-y-4 lg:col-span-5">
@@ -88,7 +97,7 @@ export function ContactPage() {
 
           <div className="overflow-hidden rounded-2xl border border-border">
             <iframe
-              title="G.I. SEA VISTA location"
+              title="G.I. SEA. VISTA location"
               src="https://maps.google.com/maps?q=164%20Moo%206%20Paklok%20Thalang%20Phuket%2083110&t=&z=13&ie=UTF8&iwloc=&output=embed"
               className="h-64 w-full border-0"
               loading="lazy"
