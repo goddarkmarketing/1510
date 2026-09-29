@@ -27,8 +27,8 @@ export const tourImages = [
 export const fleetImages = [
   {
     src: asset('images/fleet-gtx-pro.png'),
-    title: 'Sea-Doo GTX PRO 130',
-    specs: ['130 HP', 'Comfort seat', 'Up to 2 guests'],
+    title: 'Sea-Doo GTX PRO 1630cc',
+    specs: ['1630cc', 'Comfort seat', 'Up to 2 guests'],
   },
   {
     src: asset('images/fleet-tour-ready.png'),

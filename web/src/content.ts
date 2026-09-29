@@ -38,7 +38,7 @@ export const copy = {
     tours: {
       eyebrow: 'OUR TOURS',
       title: 'เลือกการผจญภัยของคุณ',
-      sub: 'ทัวร์เจ็ตสกี Sea-Doo GTX PRO 130 — 4 ชั่วโมง เที่ยว 10 เกาะ',
+      sub: 'ทัวร์เจ็ตสกี Sea-Doo GTX PRO 1630cc — 4 ชั่วโมง เที่ยว 10 เกาะ',
       adventure: {
         title: '4-Hour Jet Ski Tour',
         subtitle: '10 Islands Adventure in Phuket',
@@ -68,7 +68,7 @@ export const copy = {
           capacityNote: '2 ท่าน',
           price: '฿7,500',
           features: [
-            'Sea-Doo GTX PRO 130',
+            'Sea-Doo GTX PRO 1630cc',
             'ไกด์มืออาชีพ',
             'บริการถ่ายรูป',
             'อาหารกลางวัน',
@@ -89,7 +89,7 @@ export const copy = {
           capacityNote: '2 ท่าน',
           price: '฿7,500',
           features: [
-            'Sea-Doo GTX PRO 130',
+            'Sea-Doo GTX PRO 1630cc',
             'ไกด์มืออาชีพ',
             'บริการถ่ายรูป',
             'อาหารกลางวัน',
@@ -107,7 +107,7 @@ export const copy = {
       items: [
         {
           title: 'เจ็ตสกีรุ่นใหม่',
-          body: 'Sea-Doo GTX PRO 130 นั่งสบาย ขับมั่นใจตลอดทริป',
+          body: 'Sea-Doo GTX PRO 1630cc นั่งสบาย ขับมั่นใจตลอดทริป',
         },
         {
           title: 'ไกด์มีใบอนุญาต',
@@ -293,7 +293,7 @@ export const copy = {
     tours: {
       eyebrow: 'OUR TOURS',
       title: 'CHOOSE YOUR ADVENTURE',
-      sub: 'Sea-Doo GTX PRO 130 jet ski tours — 4 hours across 10 islands',
+      sub: 'Sea-Doo GTX PRO 1630cc jet ski tours — 4 hours across 10 islands',
       adventure: {
         title: '4-Hour Jet Ski Tour',
         subtitle: '10 Islands Adventure in Phuket',
@@ -323,7 +323,7 @@ export const copy = {
           capacityNote: '2 Guests',
           price: '฿7,500',
           features: [
-            'Sea-Doo GTX PRO 130',
+            'Sea-Doo GTX PRO 1630cc',
             'Professional guide',
             'Photo Service',
             'Lunch',
@@ -344,7 +344,7 @@ export const copy = {
           capacityNote: '2 Guests',
           price: '฿7,500',
           features: [
-            'Sea-Doo GTX PRO 130',
+            'Sea-Doo GTX PRO 1630cc',
             'Professional guide',
             'Photo Service',
             'Lunch',
@@ -362,7 +362,7 @@ export const copy = {
       items: [
         {
           title: 'NEW JET SKIS',
-          body: 'Ride Sea-Doo GTX PRO 130 for comfort and confident control.',
+          body: 'Ride Sea-Doo GTX PRO 1630cc for comfort and confident control.',
         },
         {
           title: 'LICENSED GUIDES',

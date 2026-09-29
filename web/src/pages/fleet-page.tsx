@@ -19,19 +19,19 @@ export function FleetPage() {
     locale === 'th' ? 'เรือเจ็ตสกีของเรา' : 'Our Jet Ski Fleet'
   const desc =
     locale === 'th'
-      ? 'ใช้ Sea-Doo GTX PRO 130 ที่นั่งสบาย ขับมั่นใจ พร้อมทีมเตรียมอุปกรณ์ความปลอดภัยครบ'
-      : 'Ride Sea-Doo GTX PRO 130 craft prepared for comfort, control, and a safe guided adventure.'
+      ? 'ใช้ Sea-Doo GTX PRO 1630cc ที่นั่งสบาย ขับมั่นใจ พร้อมทีมเตรียมอุปกรณ์ความปลอดภัยครบ'
+      : 'Ride Sea-Doo GTX PRO 1630cc craft prepared for comfort, control, and a safe guided adventure.'
 
   const features =
     locale === 'th'
       ? [
-          { icon: Gauge, title: 'GTX PRO 130', body: 'เครื่องแรง นั่งสบาย เหมาะกับทัวร์ทะเลยาว' },
+          { icon: Gauge, title: 'GTX PRO 1630cc', body: 'เครื่องแรง นั่งสบาย เหมาะกับทัวร์ทะเลยาว' },
           { icon: Users, title: 'นั่งได้ 2 ท่าน', body: '1 คันต่อกลุ่มเล็ก สูงสุด 2 คน' },
           { icon: ShieldCheck, title: 'อุปกรณ์ครบ', body: 'เสื้อชูชีพและคำแนะนำก่อนออกทะเล' },
           { icon: Waves, title: 'พร้อมออกทริป', body: 'ตรวจเช็กเครื่องก่อนทุกทัวร์' },
         ]
       : [
-          { icon: Gauge, title: 'GTX PRO 130', body: 'Powerful, comfortable, tour-ready performance' },
+          { icon: Gauge, title: 'GTX PRO 1630cc', body: 'Powerful, comfortable, tour-ready performance' },
           { icon: Users, title: 'Up to 2 guests', body: 'One jet ski for a pair of riders' },
           { icon: ShieldCheck, title: 'Safety gear', body: 'Life jackets and full pre-ride briefing' },
           { icon: Waves, title: 'Trip ready', body: 'Checked and prepared before every tour' },
