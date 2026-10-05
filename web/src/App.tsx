@@ -6,6 +6,7 @@ import { FaqPage } from '@/pages/faq-page'
 import { FleetPage } from '@/pages/fleet-page'
 import { GalleryPage } from '@/pages/gallery-page'
 import { HomePage } from '@/pages/home-page'
+import { ReviewsPage } from '@/pages/reviews-page'
 import { ToursPage } from '@/pages/tours-page'
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="tours" element={<ToursPage />} />
             <Route path="fleet" element={<FleetPage />} />
             <Route path="gallery" element={<GalleryPage />} />
+            <Route path="reviews" element={<ReviewsPage />} />
             <Route path="faq" element={<FaqPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

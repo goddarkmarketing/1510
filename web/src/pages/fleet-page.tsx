@@ -1,4 +1,4 @@
-import { CheckCircle2, Gauge, ShieldCheck, Users, Waves } from 'lucide-react'
+import { CheckCircle2, Gauge, ShieldCheck, Users, Waves, type LucideIcon } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -12,37 +12,21 @@ import {
 import { useLocale } from '@/context/locale'
 import { fleetImages, WA_URL } from '@/lib/site'
 
+const fleetIcons = [Gauge, Users, ShieldCheck, Waves] as const
+
 export function FleetPage() {
-  const { locale } = useLocale()
-
-  const title =
-    locale === 'th' ? 'เรือเจ็ตสกีของเรา' : 'Our Jet Ski Fleet'
-  const desc =
-    locale === 'th'
-      ? 'ใช้ Sea-Doo GTX PRO 1630cc ที่นั่งสบาย ขับมั่นใจ พร้อมทีมเตรียมอุปกรณ์ความปลอดภัยครบ'
-      : 'Ride Sea-Doo GTX PRO 1630cc craft prepared for comfort, control, and a safe guided adventure.'
-
-  const features =
-    locale === 'th'
-      ? [
-          { icon: Gauge, title: 'GTX PRO 1630cc', body: 'เครื่องแรง นั่งสบาย เหมาะกับทัวร์ทะเลยาว' },
-          { icon: Users, title: 'นั่งได้ 2 ท่าน', body: '1 คันต่อกลุ่มเล็ก สูงสุด 2 คน' },
-          { icon: ShieldCheck, title: 'อุปกรณ์ครบ', body: 'เสื้อชูชีพและคำแนะนำก่อนออกทะเล' },
-          { icon: Waves, title: 'พร้อมออกทริป', body: 'ตรวจเช็กเครื่องก่อนทุกทัวร์' },
-        ]
-      : [
-          { icon: Gauge, title: 'GTX PRO 1630cc', body: 'Powerful, comfortable, tour-ready performance' },
-          { icon: Users, title: 'Up to 2 guests', body: 'One jet ski for a pair of riders' },
-          { icon: ShieldCheck, title: 'Safety gear', body: 'Life jackets and full pre-ride briefing' },
-          { icon: Waves, title: 'Trip ready', body: 'Checked and prepared before every tour' },
-        ]
+  const { t } = useLocale()
+  const features = t.ui.fleetFeatures.map((item, index) => ({
+    ...item,
+    icon: fleetIcons[index] as LucideIcon,
+  }))
 
   return (
     <>
       <PageHero
-        eyebrow={locale === 'th' ? 'FLEET' : 'FLEET'}
-        title={title}
-        description={desc}
+        eyebrow="FLEET"
+        title={t.ui.fleetTitle}
+        description={t.ui.fleetDesc}
         image="images/hero-fleet.png"
       />
 
@@ -89,14 +73,10 @@ export function FleetPage() {
         <Card className="mt-10 bg-primary text-primary-foreground ring-0">
           <CardHeader>
             <CardTitle className="text-2xl text-white">
-              {locale === 'th'
-                ? 'พร้อมทดลองขับกับทีมเรา'
-                : 'Ready to ride with our team?'}
+              {t.ui.fleetCtaTitle}
             </CardTitle>
             <CardDescription className="text-white/75">
-              {locale === 'th'
-                ? 'จองทัวร์ได้ทาง WhatsApp'
-                : 'Book a tour via WhatsApp.'}
+              {t.ui.fleetCtaBody}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -105,7 +85,7 @@ export function FleetPage() {
               className="bg-accent text-accent-foreground hover:bg-orange-hot"
             >
               <CheckCircle2 size={16} />
-              {locale === 'th' ? 'จองเลย' : 'Book Now'}
+              {t.ui.fleetBook}
             </Button>
           </CardContent>
         </Card>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ChevronDown, Menu } from 'lucide-react'
+import { Menu } from 'lucide-react'
+import { LanguageMenu } from '@/components/language-menu'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -15,7 +16,7 @@ import { navLinks, WA_URL } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
-  const { locale, setLocale, t } = useLocale()
+  const { t } = useLocale()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -80,21 +81,7 @@ export function SiteHeader() {
             {t.nav.book}
           </Button>
 
-          <div className="relative">
-            <select
-              value={locale}
-              onChange={(e) => setLocale(e.target.value as 'th' | 'en')}
-              className="appearance-none rounded-full border border-border bg-white py-2 pr-8 pl-3 text-xs font-bold outline-none"
-              aria-label="Language"
-            >
-              <option value="en">EN</option>
-              <option value="th">TH</option>
-            </select>
-            <ChevronDown
-              size={14}
-              className="pointer-events-none absolute top-1/2 right-2.5 -translate-y-1/2 text-muted-foreground"
-            />
-          </div>
+          <LanguageMenu />
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger

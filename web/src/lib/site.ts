@@ -7,6 +7,7 @@ export const navLinks = [
   { to: '/tours', key: 'tours' as const },
   { to: '/fleet', key: 'fleet' as const },
   { to: '/gallery', key: 'gallery' as const },
+  { to: '/reviews', key: 'reviews' as const },
   { to: '/faq', key: 'faq' as const },
   { to: '/contact', key: 'contact' as const },
 ]
@@ -17,6 +18,25 @@ export const galleryImages = [
   asset('images/gallery-2.jpg'),
   asset('images/package-2.jpg'),
   asset('images/package-4.jpg'),
+]
+
+export const reviewVideos = [
+  {
+    src: asset('videos/reviews/clip-1.mp4'),
+    poster: asset('videos/reviews/clip-1.jpg'),
+  },
+  {
+    src: asset('videos/reviews/clip-2.mp4'),
+    poster: asset('videos/reviews/clip-2.jpg'),
+  },
+  {
+    src: asset('videos/reviews/clip-3.mp4'),
+    poster: asset('videos/reviews/clip-3.jpg'),
+  },
+  {
+    src: asset('videos/reviews/clip-4.mp4'),
+    poster: asset('videos/reviews/clip-4.jpg'),
+  },
 ]
 
 export const tourImages = [

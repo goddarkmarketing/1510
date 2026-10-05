@@ -1,4 +1,4 @@
-export type Locale = 'th' | 'en'
+export type Locale = 'en' | 'th' | 'zh' | 'ru' | 'de' | 'fr' | 'ja' | 'ko'
 
 export const copy = {
   th: {
@@ -7,6 +7,7 @@ export const copy = {
       tours: 'ทัวร์',
       fleet: 'เรือเจ็ตสกี',
       gallery: 'แกลเลอรี',
+      reviews: 'รีวิว',
       faq: 'คำถามที่พบบ่อย',
       contact: 'ติดต่อ',
       book: 'จองเลย',
@@ -193,6 +194,18 @@ export const copy = {
           text: 'รถมารับถึงโรงแรม สะดวกมาก คุ้มค่ากับราคาโปร',
         },
       ],
+      videoEyebrow: 'VIDEO REVIEWS',
+      videoTitle: 'รีวิวจากนักเดินทาง',
+      videoSub: 'เลื่อนดูคลิปสั้นจากทริปจริง',
+      watchAll: 'ดูรีวิวทั้งหมด',
+      pageTitle: 'รีวิววิดีโอ',
+      pageLead: 'คลิปจากแขกที่มากับเรา เพิ่มวิดีโอใหม่ได้เรื่อย ๆ',
+      clips: [
+        { name: 'Anna K.', from: 'เยอรมนี', text: 'ทริปสนุกมาก ไกด์ดูแลดี วิวสวยตลอดทาง' },
+        { name: 'James R.', from: 'อังกฤษ', text: 'ครั้งแรกที่ขับเจ็ตสกีก็มั่นใจได้ เพราะทีมดูแลตลอด' },
+        { name: 'Mei L.', from: 'สิงคโปร์', text: 'รถมารับถึงโรงแรม สะดวกมาก คุ้มกับราคาโปร' },
+        { name: 'Sofia M.', from: 'ฝรั่งเศส', text: 'เกาะสวยกว่าที่คิดตอนอยู่บนน้ำ' },
+      ],
     },
     gallery: {
       eyebrow: 'OUR GALLERY',
@@ -255,6 +268,35 @@ export const copy = {
       company: 'G.I. SEA. VISTA CO., LTD.',
       address: '164 หมู่ที่ 6 ต.ป่าคลอก อ.ถลาง จ.ภูเก็ต 83110',
     },
+    ui: {
+      guests: 'ท่าน',
+      datePlaceholder: 'วว/ดด/ปปปป',
+      datePattern: 'd MMM yyyy',
+      bookingHint:
+        'เลือกทัวร์ วันที่ และจำนวนเจ็ตสกี แล้วกดเช็กที่ว่างผ่าน WhatsApp',
+      fleetTitle: 'เรือเจ็ตสกีของเรา',
+      fleetDesc:
+        'ใช้ Sea-Doo GTX PRO 1630cc ที่นั่งสบาย ขับมั่นใจ พร้อมทีมเตรียมอุปกรณ์ความปลอดภัยครบ',
+      fleetFeatures: [
+        { title: 'GTX PRO 1630cc', body: 'เครื่องแรง นั่งสบาย เหมาะกับทัวร์ทะเลยาว' },
+        { title: 'นั่งได้ 2 ท่าน', body: '1 คันต่อกลุ่มเล็ก สูงสุด 2 คน' },
+        { title: 'อุปกรณ์ครบ', body: 'เสื้อชูชีพและคำแนะนำก่อนออกทะเล' },
+        { title: 'พร้อมออกทริป', body: 'ตรวจเช็กเครื่องก่อนทุกทัวร์' },
+      ],
+      fleetCtaTitle: 'พร้อมทดลองขับกับทีมเรา',
+      fleetCtaBody: 'จองทัวร์ได้ทาง WhatsApp',
+      fleetBook: 'จองเลย',
+      faqDesc: 'รวมคำถามยอดนิยมเกี่ยวกับทัวร์เจ็ตสกี เวลาออก และบริการรับ–ส่ง',
+      faqMoreTitle: 'ยังมีข้อสงสัย?',
+      faqMoreBody: 'ทีมงานพร้อมตอบผ่าน WhatsApp หรือหน้าติดต่อ',
+      faqListTitle: 'คำถามที่พบบ่อย',
+      galleryDesc: 'ภาพจริงจากทริปเจ็ตสกีและการผจญภัยทางทะเลกับ G.I. SEA. VISTA',
+      galleryAll: 'ทั้งหมด',
+      gallerySea: 'ทริปทะเล',
+      galleryJet: 'เจ็ตสกี',
+      galleryView: 'ดูรูปขนาดใหญ่',
+      tourSchedule: 'ตารางรอบทัวร์',
+    },
   },
   en: {
     nav: {
@@ -262,6 +304,7 @@ export const copy = {
       tours: 'Tours',
       fleet: 'Fleet',
       gallery: 'Gallery',
+      reviews: 'Reviews',
       faq: 'FAQ',
       contact: 'Contact',
       book: 'BOOK NOW',
@@ -448,6 +491,18 @@ export const copy = {
           text: 'Hotel transfer was so convenient. Great value with the current promo price.',
         },
       ],
+      videoEyebrow: 'VIDEO REVIEWS',
+      videoTitle: 'Reviews from the water',
+      videoSub: 'Slide through short clips from recent trips.',
+      watchAll: 'See all reviews',
+      pageTitle: 'Video reviews',
+      pageLead: 'Clips from guests who rode with us. Add a new video any time.',
+      clips: [
+        { name: 'Anna K.', from: 'Germany', text: 'Amazing ride and beautiful views. The guides made everything feel easy and safe.' },
+        { name: 'James R.', from: 'United Kingdom', text: 'First time on a jet ski and I felt confident the whole way.' },
+        { name: 'Mei L.', from: 'Singapore', text: 'Hotel transfer was so convenient. Great value with the promo price.' },
+        { name: 'Sofia M.', from: 'France', text: 'The islands looked even better once we were out on the water.' },
+      ],
     },
     gallery: {
       eyebrow: 'OUR GALLERY',
@@ -510,8 +565,40 @@ export const copy = {
       company: 'G.I. SEA. VISTA CO., LTD.',
       address: '164 Moo 6, Paklok, Thalang, Phuket 83110',
     },
+    ui: {
+      guests: 'Guests',
+      datePlaceholder: 'Select date',
+      datePattern: 'MMM d, yyyy',
+      bookingHint:
+        'Pick a tour, date, and jet ski count — then check availability on WhatsApp',
+      fleetTitle: 'Our Jet Ski Fleet',
+      fleetDesc:
+        'Ride Sea-Doo GTX PRO 1630cc craft prepared for comfort, control, and a safe guided adventure.',
+      fleetFeatures: [
+        { title: 'GTX PRO 1630cc', body: 'Powerful, comfortable, tour-ready performance' },
+        { title: 'Up to 2 guests', body: 'One jet ski for a pair of riders' },
+        { title: 'Safety gear', body: 'Life jackets and full pre-ride briefing' },
+        { title: 'Trip ready', body: 'Checked and prepared before every tour' },
+      ],
+      fleetCtaTitle: 'Ready to ride with our team?',
+      fleetCtaBody: 'Book a tour via WhatsApp.',
+      fleetBook: 'Book Now',
+      faqDesc:
+        'Answers about tour length, schedule, transfers, and beginner-friendly riding.',
+      faqMoreTitle: 'Still have questions?',
+      faqMoreBody: 'Our team is happy to help via WhatsApp or the contact page.',
+      faqListTitle: 'Common questions',
+      galleryDesc: 'Real moments from jet ski adventures with G.I. SEA. VISTA',
+      galleryAll: 'All',
+      gallerySea: 'Sea Tours',
+      galleryJet: 'Jet Ski',
+      galleryView: 'View photo',
+      tourSchedule: 'Tour Schedule',
+    },
   },
-} as const
+}
+
+export type Copy = (typeof copy)['en']
 
 export const contact = {
   phoneDisplay: '090 269 1898',

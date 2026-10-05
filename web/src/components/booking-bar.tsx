@@ -17,6 +17,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
 import { WA_URL } from '@/lib/site'
+import { dateLocales } from '@/i18n/languages'
 import { cn } from '@/lib/utils'
 
 const controlClass =
@@ -24,14 +25,12 @@ const controlClass =
 
 const JET_COUNTS = [1, 2, 3, 4, 5, 6, 7, 8] as const
 
-function jetSkiLabel(count: number, locale: string) {
+function jetSkiLabel(count: number, guestsWord: string) {
   const guests = count * 2
-  return locale === 'th'
-    ? `${count} JetSki · ${guests} ท่าน`
-    : `${count} JetSki · ${guests} Guests`
+  return `${count} JetSki · ${guests} ${guestsWord}`
 }
 
-function JetSkiOption({ count, locale }: { count: number; locale: string }) {
+function JetSkiOption({ count, guestsWord }: { count: number; guestsWord: string }) {
   const guests = count * 2
   return (
     <span className="flex items-center gap-2">
@@ -40,7 +39,7 @@ function JetSkiOption({ count, locale }: { count: number; locale: string }) {
       <span className="text-current/40">·</span>
       <Users className="size-3.5 shrink-0 opacity-70" strokeWidth={2.2} />
       <span className="font-semibold">
-        {guests} {locale === 'th' ? 'ท่าน' : 'Guests'}
+        {guests} {guestsWord}
       </span>
     </span>
   )
@@ -68,7 +67,7 @@ export function BookingBar() {
     e.preventDefault()
     if (!date) return
     const msg = encodeURIComponent(
-      `Hello G.I. SEA. VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nJetSki: ${jetSkiLabel(Number(jetSki), locale)}`,
+      `Hello G.I. SEA. VISTA!\nTour: ${tour}\nDate: ${format(date, 'yyyy-MM-dd')}\nJetSki: ${jetSkiLabel(Number(jetSki), t.ui.guests)}`,
     )
     window.open(`${WA_URL}?text=${msg}`, '_blank')
   }
@@ -120,13 +119,10 @@ export function BookingBar() {
                     >
                       <span className="truncate">
                         {date
-                          ? format(
-                              date,
-                              locale === 'th' ? 'd MMM yyyy' : 'MMM d, yyyy',
-                            )
-                          : locale === 'th'
-                            ? 'วว/ดด/ปปปป'
-                            : 'Select date'}
+                          ? format(date, t.ui.datePattern, {
+                              locale: dateLocales[locale],
+                            })
+                          : t.ui.datePlaceholder}
                       </span>
                       <CalendarIcon className="size-4 shrink-0 opacity-60" />
                     </PopoverTrigger>
@@ -159,7 +155,7 @@ export function BookingBar() {
                       className={cn(controlClass, 'data-[size=default]:!h-12')}
                     >
                       <SelectValue>
-                        <JetSkiOption count={Number(jetSki)} locale={locale} />
+                        <JetSkiOption count={Number(jetSki)} guestsWord={t.ui.guests} />
                       </SelectValue>
                     </SelectTrigger>
                     <SelectContent className="min-w-[var(--anchor-width)]">
@@ -169,7 +165,7 @@ export function BookingBar() {
                           value={String(count)}
                           className="py-2.5"
                         >
-                          <JetSkiOption count={count} locale={locale} />
+                          <JetSkiOption count={count} guestsWord={t.ui.guests} />
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -193,9 +189,7 @@ export function BookingBar() {
 
               <Separator className="my-3 sm:hidden" />
               <p className="text-center text-[11px] text-muted-foreground sm:mt-3 sm:text-left lg:mt-3">
-                {locale === 'th'
-                  ? 'เลือกทัวร์ วันที่ และจำนวนเจ็ตสกี แล้วกดเช็กที่ว่างผ่าน WhatsApp'
-                  : 'Pick a tour, date, and jet ski count — then check availability on WhatsApp'}
+                {t.ui.bookingHint}
               </p>
             </form>
           </CardContent>

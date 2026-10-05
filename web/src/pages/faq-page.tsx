@@ -18,7 +18,7 @@ import { useLocale } from '@/context/locale'
 import { WA_URL } from '@/lib/site'
 
 export function FaqPage() {
-  const { t, locale } = useLocale()
+  const { t } = useLocale()
 
   return (
     <>
@@ -26,9 +26,7 @@ export function FaqPage() {
         eyebrow={t.faq.eyebrow}
         title={t.faq.title}
         description={
-          locale === 'th'
-            ? 'รวมคำถามยอดนิยมเกี่ยวกับทัวร์เจ็ตสกี เวลาออก และบริการรับ–ส่ง'
-            : 'Answers about tour length, schedule, transfers, and beginner-friendly riding.'
+          t.ui.faqDesc
         }
         image="images/hero-faq.png"
       />
@@ -37,12 +35,10 @@ export function FaqPage() {
         <Card className="lg:col-span-4 h-fit">
           <CardHeader>
             <CardTitle>
-              {locale === 'th' ? 'ยังมีข้อสงสัย?' : 'Still have questions?'}
+              {t.ui.faqMoreTitle}
             </CardTitle>
             <CardDescription>
-              {locale === 'th'
-                ? 'ทีมงานพร้อมตอบผ่าน WhatsApp หรือหน้าติดต่อ'
-                : 'Our team is happy to help via WhatsApp or the contact page.'}
+              {t.ui.faqMoreBody}
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-3">
@@ -61,7 +57,7 @@ export function FaqPage() {
         <Card className="lg:col-span-8">
           <CardHeader>
             <CardTitle>
-              {locale === 'th' ? 'คำถามที่พบบ่อย' : 'Common questions'}
+              {t.ui.faqListTitle}
             </CardTitle>
           </CardHeader>
           <CardContent>

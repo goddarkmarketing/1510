@@ -11,7 +11,7 @@ import { useLocale } from '@/context/locale'
 import { galleryImages } from '@/lib/site'
 
 export function GalleryPage() {
-  const { t, locale } = useLocale()
+  const { t } = useLocale()
   const [active, setActive] = useState<string | null>(null)
 
   return (
@@ -20,22 +20,16 @@ export function GalleryPage() {
         eyebrow={t.gallery.eyebrow}
         title={t.gallery.title}
         description={
-          locale === 'th'
-            ? 'ภาพจริงจากทริปเจ็ตสกีและการผจญภัยทางทะเลกับ G.I. SEA. VISTA'
-            : 'Real moments from jet ski adventures with G.I. SEA. VISTA'
+          t.ui.galleryDesc
         }
         image="images/hero-gallery.png"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mb-6 flex flex-wrap gap-2">
-          <Badge>{locale === 'th' ? 'ทั้งหมด' : 'All'}</Badge>
-          <Badge variant="secondary">
-            {locale === 'th' ? 'ทริปทะเล' : 'Sea Tours'}
-          </Badge>
-          <Badge variant="outline">
-            {locale === 'th' ? 'เจ็ตสกี' : 'Jet Ski'}
-          </Badge>
+          <Badge>{t.ui.galleryAll}</Badge>
+          <Badge variant="secondary">{t.ui.gallerySea}</Badge>
+          <Badge variant="outline">{t.ui.galleryJet}</Badge>
         </div>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
@@ -63,7 +57,7 @@ export function GalleryPage() {
         >
           <SheetHeader>
             <SheetTitle>
-              {locale === 'th' ? 'ดูรูปขนาดใหญ่' : 'View photo'}
+              {t.ui.galleryView}
             </SheetTitle>
           </SheetHeader>
           {active ? (

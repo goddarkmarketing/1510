@@ -12,7 +12,7 @@ import { useLocale } from '@/context/locale'
 import { tourImages } from '@/lib/site'
 
 export function ToursPage() {
-  const { t, locale } = useLocale()
+  const { t } = useLocale()
 
   return (
     <>
@@ -49,7 +49,7 @@ export function ToursPage() {
         <Card className="mt-10 border-primary/20 bg-secondary/40">
           <CardHeader>
             <CardTitle>
-              {locale === 'th' ? 'ตารางรอบทัวร์' : 'Tour Schedule'}
+              {t.ui.tourSchedule}
             </CardTitle>
             <CardDescription>{t.schedule.note}</CardDescription>
           </CardHeader>

@@ -12,6 +12,7 @@ import {
   X,
 } from 'lucide-react'
 import { BookingBar } from '@/components/booking-bar'
+import { ReviewSlider, type ReviewClip } from '@/components/review-videos'
 import { TourAdventure } from '@/components/tour-adventure'
 import { TourOfferCard } from '@/components/tour-offer-card'
 import { BlurFade } from '@/components/ui/blur-fade'
@@ -27,7 +28,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useLocale } from '@/context/locale'
 import { asset } from '@/lib/asset'
-import { tourImages, WA_URL } from '@/lib/site'
+import { reviewVideos, tourImages, WA_URL } from '@/lib/site'
 
 const whyIcons = [Ship, UserCheck, ShieldCheck, Bus] as const
 
@@ -242,6 +243,40 @@ export function HomePage() {
                 </Button>
               </CardFooter>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f4f8fc] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+                {t.reviews.videoEyebrow}
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
+                {t.reviews.videoTitle}
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">{t.reviews.videoSub}</p>
+            </div>
+            <Button
+              render={<Link to="/reviews" />}
+              variant="outline"
+              className="border-primary text-primary"
+            >
+              {t.reviews.watchAll}
+            </Button>
+          </div>
+          <div className="mt-8">
+            <ReviewSlider
+              clips={reviewVideos.map((video, index) => ({
+                src: video.src,
+                poster: video.poster,
+                name: t.reviews.clips[index]?.name ?? '',
+                from: t.reviews.clips[index]?.from ?? '',
+                text: t.reviews.clips[index]?.text ?? '',
+              })) satisfies ReviewClip[]}
+            />
           </div>
         </div>
       </section>
