@@ -50,7 +50,7 @@ function ReviewCard({
       </div>
       <figcaption className="px-4 py-3.5">
         <p className="text-sm font-extrabold text-blue-deep">{clip.name}</p>
-        <p className="text-xs font-semibold text-primary">{clip.from}</p>
+        <p className="text-xs font-semibold text-gold">{clip.from}</p>
         <p className="mt-1.5 line-clamp-2 text-sm text-muted-foreground">
           “{clip.text}”
         </p>

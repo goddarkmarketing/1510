@@ -10,17 +10,17 @@ export function SiteFooter() {
   const { t } = useLocale()
 
   return (
-    <footer className="bg-blue-deep text-white">
+    <footer className="bg-[#111111] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-3">
           <div className="flex items-center gap-3">
             <img
-              src={asset('images/logo.jpg')}
+              src={asset('images/logo-brand.png')}
               alt=""
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-12 w-auto rounded-md bg-white px-2 py-1"
             />
             <div>
-              <p className="font-extrabold">G.I. SEA. VISTA</p>
+              <p className="font-display text-lg font-bold tracking-wide text-gold">G.I. SEA VISTA</p>
               <p className="text-xs text-white/60">{t.footer.tagline}</p>
             </div>
           </div>
@@ -34,7 +34,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm text-white/70">
             {navLinks.map((item) => (
               <li key={item.to}>
-                <Link to={item.to} className="hover:text-orange-hot">
+                <Link to={item.to} className="hover:text-gold-bright">
                   {t.nav[item.key]}
                 </Link>
               </li>
@@ -48,22 +48,22 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-3 text-sm text-white/75">
             <li className="flex gap-2">
-              <Phone size={16} className="mt-0.5 shrink-0 text-orange-hot" />
+              <Phone size={16} className="mt-0.5 shrink-0 text-gold-bright" />
               <a href={`tel:${contact.phoneTel}`}>{contact.phoneDisplay}</a>
             </li>
             <li className="flex gap-2">
               <MessageCircle
                 size={16}
-                className="mt-0.5 shrink-0 text-orange-hot"
+                className="mt-0.5 shrink-0 text-gold-bright"
               />
               <a href={WA_URL}>WhatsApp +66 90 269 1898</a>
             </li>
             <li className="flex gap-2">
-              <Mail size={16} className="mt-0.5 shrink-0 text-orange-hot" />
+              <Mail size={16} className="mt-0.5 shrink-0 text-gold-bright" />
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </li>
             <li className="flex gap-2">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-orange-hot" />
+              <MapPin size={16} className="mt-0.5 shrink-0 text-gold-bright" />
               <a href={contact.mapsUrl} target="_blank" rel="noreferrer">
                 {t.footer.address}
               </a>

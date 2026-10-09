@@ -59,27 +59,27 @@ export function ContactPage() {
             <CardContent className="space-y-4 text-sm">
               <a
                 href={`tel:${contact.phoneTel}`}
-                className="flex items-start gap-3 hover:text-primary"
+                className="flex items-start gap-3 hover:text-gold"
               >
-                <Phone size={18} className="mt-0.5 text-primary" />
+                <Phone size={18} className="mt-0.5 text-gold" />
                 {contact.phoneDisplay}
               </a>
               <a
                 href={WA_URL}
-                className="flex items-start gap-3 hover:text-primary"
+                className="flex items-start gap-3 hover:text-gold"
               >
-                <MessageCircle size={18} className="mt-0.5 text-primary" />
+                <MessageCircle size={18} className="mt-0.5 text-gold" />
                 WhatsApp +66 90 269 1898
               </a>
               <div className="flex items-start gap-3">
-                <Send size={18} className="mt-0.5 text-primary" />
+                <Send size={18} className="mt-0.5 text-gold" />
                 LINE {contact.line}
               </div>
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-start gap-3 hover:text-primary"
+                className="flex items-start gap-3 hover:text-gold"
               >
-                <Mail size={18} className="mt-0.5 text-primary" />
+                <Mail size={18} className="mt-0.5 text-gold" />
                 {contact.email}
               </a>
               <Separator />
@@ -87,9 +87,9 @@ export function ContactPage() {
                 href={contact.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-3 hover:text-primary"
+                className="flex items-start gap-3 hover:text-gold"
               >
-                <MapPin size={18} className="mt-0.5 text-primary" />
+                <MapPin size={18} className="mt-0.5 text-gold" />
                 {t.footer.address}
               </a>
             </CardContent>

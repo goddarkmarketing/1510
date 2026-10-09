@@ -37,7 +37,7 @@ export function TourOfferCard({
   const PeriodIcon = item.period === 'afternoon' ? Sunset : Sun
 
   return (
-    <article className="flex h-full flex-col rounded-[1.6rem] bg-white p-3 shadow-[0_10px_30px_rgba(6,36,71,0.08)] ring-1 ring-black/5 sm:p-4">
+    <article className="flex h-full flex-col rounded-[1.6rem] bg-white p-3 shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-gold/35 sm:p-4">
       <img
         src={image}
         alt=""

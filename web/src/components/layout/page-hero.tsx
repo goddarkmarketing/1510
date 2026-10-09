@@ -29,12 +29,12 @@ export function PageHero({
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-deep/90 via-blue-deep/70 to-blue-deep/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Badge className="bg-accent text-accent-foreground hover:bg-accent">
+        <Badge className="bg-gold text-[#141414] hover:bg-gold">
           {eyebrow}
         </Badge>
-        <h1 className="mt-3 line-clamp-2 max-w-3xl text-3xl font-extrabold text-white sm:mt-4 sm:text-4xl lg:text-5xl">
+        <h1 className="mt-3 line-clamp-2 max-w-3xl font-display text-3xl font-extrabold tracking-wide text-white uppercase italic sm:mt-4 sm:text-4xl lg:text-5xl">
           {title}
         </h1>
         {description ? (

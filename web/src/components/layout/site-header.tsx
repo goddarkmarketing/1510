@@ -37,20 +37,12 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5">
+        <Link to="/" className="flex min-w-0 items-center">
           <img
-            src={asset('images/logo.jpg')}
-            alt="GI JET SKI TOURS"
-            className="h-11 w-11 rounded-full object-cover"
+            src={asset('images/logo-brand.png')}
+            alt="G.I. SEA VISTA"
+            className="h-10 w-auto max-w-[54vw] object-contain object-left sm:h-14 sm:max-w-[280px]"
           />
-          <div className="min-w-0 leading-tight">
-            <p className="text-sm font-extrabold tracking-wide text-primary sm:text-base">
-              GI JET SKI TOURS
-            </p>
-            <p className="hidden text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase sm:block">
-              Ride · Explore · Discover
-            </p>
-          </div>
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex">
@@ -98,7 +90,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[88%] max-w-sm p-0">
               <SheetHeader className="border-b border-border p-4 text-left">
-                <SheetTitle>GI JET SKI TOURS</SheetTitle>
+                <SheetTitle className="font-display tracking-wide">G.I. SEA VISTA</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 p-3">
                 {navLinks.map((item) => (

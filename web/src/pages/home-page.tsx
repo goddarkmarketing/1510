@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   Bus,
   CheckCircle2,
+  ArrowRight,
   Play,
   ShieldCheck,
   Ship,
@@ -53,23 +54,27 @@ export function HomePage() {
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-[32%_center] lg:object-[18%_30%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/55" />
 
           <div className="relative mx-auto flex min-h-[min(640px,calc(100svh-4rem))] max-w-3xl flex-col items-center justify-center px-4 pb-28 pt-8 text-center sm:min-h-[calc(100svh-72px)] sm:px-6 sm:pb-40 sm:pt-10">
             <BlurFade direction="up" offset={18} inView={false} className="flex flex-col items-center">
-              <h1 className="text-[1.85rem] leading-[1.15] font-extrabold tracking-wide text-orange uppercase sm:text-5xl lg:text-6xl">
-                {t.hero.title}
+              <h1 className="font-display text-[2.6rem] leading-[0.9] font-extrabold tracking-wide text-gold-shine uppercase italic sm:text-7xl lg:text-8xl">
+                GI SEA VISTA
               </h1>
-              <p className="mt-3 text-sm font-bold tracking-[0.22em] text-white uppercase sm:text-lg">
-                {t.hero.place}
+              <p className="font-display mt-1 text-[1.65rem] leading-none font-bold tracking-[0.06em] text-white uppercase italic sm:text-5xl">
+                JET SKI TOURS
+              </p>
+              <p className="mt-3 text-sm font-semibold tracking-[0.28em] text-white uppercase sm:text-lg">
+                PHUKET • THAILAND
               </p>
               <Button
                 render={
                   <a href={WA_URL} target="_blank" rel="noreferrer" />
                 }
-                className="mt-6 h-12 rounded-md bg-orange px-8 text-sm font-bold tracking-[0.16em] text-white uppercase hover:bg-orange-hot"
+                className="mt-6 h-12 rounded-full bg-orange px-8 text-sm font-bold tracking-[0.14em] text-white uppercase hover:bg-orange-hot"
               >
                 {t.hero.booking}
+                <ArrowRight className="size-4" />
               </Button>
             </BlurFade>
           </div>
@@ -83,7 +88,7 @@ export function HomePage() {
       <section className="bg-sky/40 pt-16 pb-8 sm:pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <BlurFade direction="up" className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+            <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
               {t.tours.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">{t.tours.title}</h2>
@@ -116,7 +121,7 @@ export function HomePage() {
       <section className="bg-sky/50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <BlurFade direction="up" className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+            <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
               {t.why.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">{t.why.title}</h2>
@@ -150,7 +155,7 @@ export function HomePage() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-blue-deep/70" />
+        <div className="absolute inset-0 bg-black/65" />
         <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-16 sm:flex-row sm:items-center sm:px-6 sm:py-20 lg:px-8">
           <div>
             <h2 className="max-w-xl text-3xl font-extrabold text-white sm:text-4xl">
@@ -203,7 +208,7 @@ export function HomePage() {
       <section className="bg-[#f7f9fc] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">
           <div className="lg:col-span-4">
-            <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+            <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
               {t.pricing.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
@@ -251,7 +256,7 @@ export function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+              <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
                 {t.reviews.videoEyebrow}
               </p>
               <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
@@ -284,7 +289,7 @@ export function HomePage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold tracking-[0.28em] text-primary uppercase">
+            <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
               {t.reviews.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
@@ -293,7 +298,7 @@ export function HomePage() {
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12">
             <div className="text-center lg:col-span-3 lg:text-left">
-              <p className="text-6xl font-extrabold text-primary">{t.reviews.rating}</p>
+              <p className="text-6xl font-extrabold text-gold">{t.reviews.rating}</p>
               <div className="mt-2 flex justify-center gap-1 text-accent lg:justify-start">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={18} fill="currentColor" />
@@ -337,7 +342,7 @@ export function HomePage() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
         />
-        <div className="absolute inset-0 bg-blue-deep/75" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 py-16 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-20 lg:px-8">
           <div>
             <h2 className="max-w-md text-3xl font-extrabold text-white sm:text-4xl">

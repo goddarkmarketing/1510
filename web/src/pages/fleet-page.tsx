@@ -62,7 +62,7 @@ export function FleetPage() {
           {features.map((item) => (
             <Card key={item.title}>
               <CardHeader>
-                <item.icon className="text-primary" size={24} />
+                <item.icon className="text-gold" size={24} />
                 <CardTitle className="text-base">{item.title}</CardTitle>
                 <CardDescription>{item.body}</CardDescription>
               </CardHeader>

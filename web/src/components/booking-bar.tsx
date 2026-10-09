@@ -75,13 +75,14 @@ export function BookingBar() {
   return (
     <div className="relative z-10 mx-auto -mt-16 max-w-6xl px-4 sm:-mt-16 sm:px-6 lg:px-8">
       <BlurFade direction="up" delay={0.15} inView={false}>
-        <Card className="border-0 py-0 shadow-[0_20px_60px_rgba(6,36,71,0.18)] ring-1 ring-black/5">
+        <Card className="border-0 py-0 shadow-[0_18px_50px_rgba(0,0,0,0.18)] ring-2 ring-gold">
           <CardContent className="p-3 sm:p-4">
             <form onSubmit={onSubmit}>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_auto] lg:items-end">
                 <Field className="gap-1.5">
-                  <FieldLabel className="flex h-4 items-center text-xs font-semibold text-muted-foreground">
+                  <FieldLabel className="flex h-4 items-center gap-2 font-display text-sm font-bold tracking-wide text-gold italic">
                     {t.hero.bookTour}
+                    <span className="h-px w-10 bg-gold" />
                   </FieldLabel>
                   <Select value={tour} onValueChange={(v) => v && setTour(v)}>
                     <SelectTrigger
