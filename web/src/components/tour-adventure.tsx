@@ -71,7 +71,7 @@ export function TourAdventure({ className }: { className?: string }) {
           <div className="overflow-hidden rounded-[1.25rem] shadow-[0_12px_40px_rgba(6,36,71,0.12)] sm:rounded-[1.75rem]">
             <img
               src={asset('images/tour-adventure-main.png')}
-              alt="Get free lunch, hotel transfer, and photo"
+              alt="Guests with the jet ski fleet on the beach"
               className="h-auto w-full"
             />
           </div>

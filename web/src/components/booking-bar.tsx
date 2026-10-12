@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils'
 const controlClass =
   '!h-12 w-full rounded-xl border border-border bg-background px-3 text-sm font-semibold shadow-none'
 
-const JET_COUNTS = [1, 2, 3, 4, 5, 6, 7, 8] as const
+const JET_COUNTS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const
 
 function jetSkiLabel(count: number, guestsWord: string) {
   const guests = count * 2
