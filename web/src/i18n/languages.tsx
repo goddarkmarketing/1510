@@ -1,5 +1,5 @@
 import type { Locale } from 'date-fns'
-import { de, enUS, fr, ja, ko, ru, th, zhCN } from 'date-fns/locale'
+import { ar, de, enUS, fr, ja, ko, ru, th, zhCN } from 'date-fns/locale'
 import type { Locale as AppLocale } from '@/content'
 
 export const languages = [
@@ -11,6 +11,7 @@ export const languages = [
   { code: 'fr', short: 'FR', label: 'Français' },
   { code: 'ja', short: 'JA', label: '日本語' },
   { code: 'ko', short: 'KO', label: '한국어' },
+  { code: 'ar', short: 'AR', label: 'العربية' },
 ] as const satisfies readonly { code: AppLocale; short: string; label: string }[]
 
 export const dateLocales: Record<AppLocale, Locale> = {
@@ -22,6 +23,7 @@ export const dateLocales: Record<AppLocale, Locale> = {
   fr,
   ja,
   ko,
+  ar,
 }
 
 export function LanguageFlag({ code }: { code: AppLocale }) {
@@ -39,6 +41,7 @@ export function LanguageFlag({ code }: { code: AppLocale }) {
       {code === 'fr' ? <FlagFr /> : null}
       {code === 'ja' ? <FlagJa /> : null}
       {code === 'ko' ? <FlagKo /> : null}
+      {code === 'ar' ? <FlagAr /> : null}
     </svg>
   )
 }
@@ -112,6 +115,21 @@ function FlagJa() {
     <>
       <rect width="60" height="40" fill="#fff" />
       <circle cx="30" cy="20" r="9" fill="#BC002D" />
+    </>
+  )
+}
+
+function FlagAr() {
+  return (
+    <>
+      <rect width="60" height="40" fill="#006C35" />
+      <path
+        d="M10 27.5 H44"
+        stroke="#fff"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+      />
+      <path d="M44 27.5 l7-2.2" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
     </>
   )
 }

@@ -50,6 +50,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale === 'zh' ? 'zh-Hans' : locale
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr'
   }, [locale])
 
   const value = useMemo(

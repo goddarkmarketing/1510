@@ -127,6 +127,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  html[lang='ar'] body {
+    font-family: 'Cairo', var(--font-sans);
+  }
+
   h1,
   h2,
   h3 {
